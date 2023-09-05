@@ -52,10 +52,10 @@ const Page = () => {
       email: user.email,
       password: user.password,
     };
-    const response = await Api("post", "login", payload);
+    const response = await Api("post", "user/signin", payload);
     if (response) {
       console.log(response);
-      localStorage.setItem("pos-auth-token", response?.data?.token);
+      localStorage.setItem("chain-auth-token", response?.data?.token);
       toast.success(response?.data?.message);
       // navigate("/dashboard")
     } else {
